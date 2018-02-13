@@ -8,7 +8,6 @@ Created on Feb 9, 2018
 #                                           #
 #############################################
 
-output_length=2
 percentile = 20
 #function returning value corresponding to percentile greatest rank
 def greatestRank(percentile, numListMem, inputList): 
