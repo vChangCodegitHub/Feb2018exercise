@@ -39,14 +39,22 @@ class donationRecipient:
 
 f = open("itcont.txt", "r")
 data = f.readlines()
-list = []
+listofRecipientYearZipcode = []
 for line in data:
 #    print line 
     lineSplit=line.split('|')
-   print lineSplit
+    tempRecipientID=lineSplit[0]+lineSplit[4][0:4]+lineSplit[10][0:5]
+    listofRecipientYearZipcode.append(tempRecipientID)
+    print lineSplit
     #need take split lines list, assign it to donation recipient by number
-    #how do you create new strings, concatonate? see below.    "
+    #how do you create new strings, concatonate? see below.    
+#print "itcont.txt has %d lines" %(1+ length(itcont.txt))
+#print "ASDF!"
 f.close()
+#remove duplicates from list of Recipients
+listofRecipientYearZipcode=set(listofRecipientYearZipcode)
+print listofRecipientYearZipcode
+
 
 DR_C0038415_2018 = donationRecipient('C0038415')
 DR_C00629618_2017 = donationRecipient('C00629618')
