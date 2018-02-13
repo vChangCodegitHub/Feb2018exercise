@@ -11,9 +11,10 @@ Created on Feb 9, 2018
 percentile = 0
 #function returning value corresponding to percentile greatest rank
 def greatestRank(percentile, numListMem, inputList): 
-    ordinalNum = 1 + (percentile*numListMem/100)
-    print ordinalNum
+    ordinalNum = 1 + int(percentile*numListMem/100)
+#print ordinalNum
     greatestRankValue = inputList[ordinalNum - 1]
+    print greatestRankValue
     return greatestRankValue
 
 f = open("percentile.txt", "r")
@@ -73,11 +74,10 @@ for i in range(listLength):
             %(listOfDonationRecipients[i].recipientID)
         listOfDR_useful.append(listOfDonationRecipients[i])
 print listOfDR_useful[0].sponsorDonations
-#need to modify below so if more than 1 element listOfDruseful, can do this, result in nested for loop
+#need to modify below so if more than 1 element listOfDR_useful, can do this, result in nested for loop
 #calculate greatest rank percentile value
-listOfDR_useful[0].percentileValue= \
-    greatestRank(percentile, len(listOfDR_useful[0].sponsorDonations),\
+listOfDR_useful[0].percentileValue= greatestRank(percentile, len(listOfDR_useful[0].sponsorDonations),\
                   listOfDR_useful[0].sponsorDonations)
-print listOfDR_useful[0].percentileValue
+#print listOfDR_useful[0].percentileValue
 
 total_donation=0
